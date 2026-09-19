@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil Kenvetil - Resume</title>
+    
+    <!-- React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        accent: {
+                            cyan: '#22d3ee',
+                            purple: '#c084fc',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #22d3ee, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { motion, useScroll, useTransform } = window.Motion;
+        const { Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Code, Database, Server, Briefcase, GraduationCap, Award } = lucide;
+
+        // --- Data ---
+        const resumeData = {
+            header: {
+                name: "Nikhil Kenvetil",
+                title: "Senior Software Engineer",
+                location: "Bangalore, India",
+                email: "nikhil.kenvetil@example.com",
+                phone: "+91 98765 43210",
+                linkedin: "linkedin.com/in/nikhilkenvetil",
+                github: "github.com/nikhilkenvetil"
+            },
+            summary: "Results-oriented Senior Software Engineer with 8+ years of experience in designing and implementing scalable distributed systems. Proven track record in leading high-performance teams, optimizing cloud infrastructure, and delivering robust full-stack solutions. Passionate about clean code, system architecture, and mentoring junior developers.",
+            experience: [
+                {
+                    role: "Senior Software Engineer",
+                    company: "Tech Giant Corp",
+                    period: "2021 - Present",
+                    description: "Leading a team of 6 engineers in rebuilding the core payment processing engine. Reduced latency by 40% and improved system reliability to 99.99%."
+                },
+                {
+                    role: "Software Engineer",
+                    company: "Innovate Solutions",
+                    period: "2018 - 2021",
+                    description: "Developed microservices architecture using Java Spring Boot and AWS. Implemented CI/CD pipelines reducing deployment time by 60%."
+                },
+                {
+                    role: "Junior Developer",
+                    company: "StartUp Inc",
+                    period: "2016 - 2018",
+                    description: "Full-stack development using React and Node.js. Built customer dashboard features increasing user engagement by 25%."
+                }
+            ],
+            skills: [
+                { category: "Languages", items: ["Java", "Python", "JavaScript", "Go", "SQL"] },
+                { category: "Frameworks", items: ["Spring Boot", "React", "Node.js", "Django", "Flutter"] },
+                { category: "Cloud & DevOps", items: ["AWS", "Docker", "Kubernetes", "Terraform", "Jenkins"] },
+                { category: "Databases", items: ["PostgreSQL", "MongoDB", "Redis", "DynamoDB", "Elasticsearch"] },
+                { category: "Tools", items: ["Git", "Linux", "Prometheus", "Grafana", "IntelliJ"] },
+                { category: "Concepts", items: ["Microservices", "System Design", "Agile", "REST APIs", "GraphQL"] }
+            ],
+            projects: [
+                {
+                    title: "Distributed Cache System",
+                    tech: "Java, Redis, AWS",
+                    desc: "Designed a custom distributed caching layer handling 1M+ requests/sec with sub-millisecond latency."
+                },
+                {
+                    title: "Real-time Analytics Dashboard",
+                    tech: "React, Kafka, Python",
+                    desc: "Built a real-time data visualization platform processing streaming data from IoT devices."
+                },
+                {
+                    title: "E-commerce Microservices",
+                    tech: "Spring Boot, Docker, K8s",
+                    desc: "Architected a scalable e-commerce backend supporting flash sales with auto-scaling capabilities."
+                },
+                {
+                    title: "AI-Powered Recommendation Engine",
+                    tech: "Python, TensorFlow, AWS SageMaker",
+                    desc: "Implemented a machine learning model improving product recommendation click-through rates by 15%."
+                }
+            ],
+            education: [
+                { degree: "B.Tech in Computer Science", school: "Indian Institute of Technology", year: "2016" }
+            ],
+            certifications: [
+                "AWS Certified Solutions Architect - Professional",
+                "Certified Kubernetes Administrator (CKA)",
+                "Oracle Certified Professional: Java SE 11 Developer"
+            ]
+        };
+
+        // --- Components ---
+
+        const SectionTitle = ({ children, icon: Icon }) => (
+            <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-3 mb-8"
+            >
+                <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/30">
+                    <Icon size={24} className="text-cyan-400" />
+                </div>
+                <h2 className="text-2xl font-bold gradient-text">{children}</h2>
+            </motion.div>
+        );
+
+        const Card = ({ children, delay = 0 }) => (
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="glass-card p-6 rounded-xl shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
+            >
+                {children}
+            </motion.div>
+        );
+
+        const App = () => {
+            const { scrollYProgress } = useScroll();
+            const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+            useEffect(() => {
+                lucide.createIcons();
+            });
+
+            return (
+                <div className="max-w-5xl mx-auto px-4 py-12 relative">
+                    {/* Progress Bar */}
+                    <motion.div 
+                        style={{ scaleX }} 
+                        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 origin-left z-50"
+                    />
+
+                    {/* Header */}
+                    <motion.header 
+                        initial={{ opacity: 0, y: -50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-16 relative"
+                    >
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/20 rounded-full blur-[100px] -z-10"></div>
+                        <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
+                            {resumeData.header.name}
+                        </h1>
+                        <p className="text-xl md:text-2xl text-cyan-400 font-medium mb-8">
+                            {resumeData.header.title}
+                        </p>
+                        
+                        <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-400">
+                            <span className="flex items-center gap-2"><MapPin size={16} /> {resumeData.header.location}</span>
+                            <span className="flex items-center gap-2"><Mail size={16} /> {resumeData.header.email}</span>
+                            <span className="flex items-center gap-2"><Phone size={16} /> {resumeData.header.phone}</span>
+                        </div>
+
+                        <div className="flex justify-center gap-4 mt-6">
+                            <a href="#" className="p-3 rounded-full glass-card hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors"><Linkedin size={20} /></a>
+                            <a href="#" className="p-3 rounded-full glass-card hover:bg-purple-500/20 hover:text-purple-400 transition-colors"><Github size={20} /></a>
+                        </div>
+                    </motion.header>
+
+                    {/* Summary */}
+                    <section className="mb-16">
+                        <Card>
+                            <p className="text-lg leading-relaxed text-slate-300">{resumeData.summary}</p>
+                        </Card>
+                    </section>
+
+                    {/* Experience */}
+                    <section className="mb-16">
+                        <SectionTitle icon={Briefcase}>Experience</SectionTitle>
+                        <div className="space-y-6">
+                            {resumeData.experience.map((job, index) => (
+                                <Card key={index} delay={index * 0.1}>
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                        <div>
+                                            <h3 className="text-xl font-bold text-white">{job.role}</h3>
+                                            <p className="text-cyan-400 font-medium">{job.company}</p>
+                                        </div>
+                                        <span className="mt-2 md:mt-0 px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-sm border border-slate-700">
+                                            {job.period}
+                                        </span>
+                                    </div>
+                                    <p className="text-slate-400">{job.description}</p>
+                                </Card>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Skills */}
+                    <section className="mb-16">
+                        <SectionTitle icon={Code}>Technical Skills</SectionTitle>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {resumeData.skills.map((skillGroup, index) => (
+                                <Card key={index} delay={index * 0.05}>
+                                    <h3 className="text-lg font-semibold text-white mb-4 border-b border-slate-700 pb-2">
+                                        {skillGroup.category}
+                                    </h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {skillGroup.items.map((skill, i) => (
+                                            <span key={i} className="px-3 py-1 rounded-md bg-slate-800/50 text-cyan-300 text-sm border border-cyan-900/30 hover:border-cyan-500/50 transition-colors cursor-default">
+                                                {skill}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </Card>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Projects */}
+                    <section className="mb-16">
+                        <SectionTitle icon={Server}>Key Projects</SectionTitle>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {resumeData.projects.map((project, index) => (
+                                <Card key={index} delay={index * 0.1}>
+                                    <div className="flex items-start justify-between mb-3">
+                                        <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                                        <ExternalLink size={18} className="text-slate-500 hover:text-cyan-400 cursor-pointer" />
+                                    </div>
+                                    <p className="text-cyan-400 text-sm mb-3 font-mono">{project.tech}</p>
+                                    <p className="text-slate-400 text-sm leading-relaxed">{project.desc}</p>
+                                </Card>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Education & Certs */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                        <section>
+                            <SectionTitle icon={GraduationCap}>Education</SectionTitle>
+                            {resumeData.education.map((edu, index) => (
+                                <Card key={index}>
+                                    <h3 className="text-lg font-bold text-white">{edu.degree}</h3>
+                                    <p className="text-cyan-400">{edu.school}</p>
+                                    <p className="text-slate-500 text-sm mt-2">{edu.year}</p>
+                                </Card>
+                            ))}
+                        </section>
+                        <section>
+                            <SectionTitle icon={Award}>Certifications</SectionTitle>
+                            <Card>
+                                <ul className="space-y-3">
+                                    {resumeData.certifications.map((cert, index) => (
+                                        <li key={index} className="flex items-start gap-3 text-slate-300">
+                                            <div className="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+                                            {cert}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Card>
+                        </section>
+                    </div>
+
+                    {/* Footer */}
+                    <footer className="text-center text-slate-500 text-sm py-8 border-t border-slate-800">
+                        <p>© {new Date().getFullYear()} Nikhil Kenvetil. Built with React & Framer Motion.</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
