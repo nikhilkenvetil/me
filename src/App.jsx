@@ -182,17 +182,17 @@ const Section = ({ children, className = "" }) => (
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, margin: "-100px" }}
-    className={`bg-white/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl mb-6 ${className}`}
+    className={`bg-gray-900/60 backdrop-blur-xl rounded-3xl p-8 shadow-2xl mb-6 border border-gray-800 ${className}`}
   >
     {children}
   </motion.section>
 )
 
 const SectionTitle = ({ children }) => (
-  <h2 className="text-3xl font-bold text-gray-800 mb-6 relative inline-block">
+  <h2 className="text-3xl font-bold text-white mb-6 relative inline-block">
     {children}
     <motion.div
-      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full"
+      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
       initial={{ width: 0 }}
       whileInView={{ width: "60px" }}
       viewport={{ once: true }}
@@ -204,9 +204,9 @@ const SectionTitle = ({ children }) => (
 const ContactItem = ({ icon: Icon, text }) => (
   <motion.div
     whileHover={{ scale: 1.05, x: 5 }}
-    className="flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl text-gray-600 cursor-pointer transition-all"
+    className="flex items-center gap-3 px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-xl text-gray-300 cursor-pointer transition-all border border-gray-700 hover:border-cyan-500/50"
   >
-    <Icon className="w-4 h-4 text-purple-600" />
+    <Icon className="w-4 h-4 text-cyan-400" />
     <span className="text-sm">{text}</span>
   </motion.div>
 )
@@ -214,11 +214,11 @@ const ContactItem = ({ icon: Icon, text }) => (
 const ExperienceItem = ({ item }) => (
   <motion.div
     variants={itemVariants}
-    className="mb-8 pb-8 border-b border-gray-100 last:border-b-0 last:mb-0 last:pb-0"
+    className="mb-8 pb-8 border-b border-gray-800 last:border-b-0 last:mb-0 last:pb-0"
   >
-    <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
-    <p className="text-lg text-purple-600 font-medium mt-1">{item.company}</p>
-    <p className="text-gray-400 text-sm mt-1 mb-4">{item.duration}</p>
+    <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+    <p className="text-lg text-cyan-400 font-medium mt-1">{item.company}</p>
+    <p className="text-gray-500 text-sm mt-1 mb-4">{item.duration}</p>
     <ul className="space-y-2">
       {item.points.map((point, idx) => (
         <motion.li
@@ -227,9 +227,9 @@ const ExperienceItem = ({ item }) => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1 }}
-          className="flex items-start gap-3 text-gray-600"
+          className="flex items-start gap-3 text-gray-300"
         >
-          <ChevronRight className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+          <ChevronRight className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
           <span>{point}</span>
         </motion.li>
       ))}
@@ -240,13 +240,13 @@ const ExperienceItem = ({ item }) => (
 const SkillCard = ({ category, items }) => (
   <motion.div
     whileHover={{ scale: 1.03, y: -5 }}
-    className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-purple-500"
+    className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 p-6 rounded-2xl border-l-4 border-cyan-400 border border-gray-700"
   >
-    <h3 className="text-lg font-semibold text-gray-800 mb-4">{category}</h3>
+    <h3 className="text-lg font-semibold text-white mb-4">{category}</h3>
     <ul className="space-y-2">
       {items.map((item, idx) => (
-        <li key={idx} className="flex items-center gap-2 text-gray-600 text-sm">
-          <div className="w-2 h-2 bg-purple-500 rounded-full" />
+        <li key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
+          <div className="w-2 h-2 bg-cyan-400 rounded-full" />
           {item}
         </li>
       ))}
@@ -258,7 +258,7 @@ function App() {
   const { name, title, contact, summary, experience, projects, skills, education, certifications, earlierExperience } = resumeData
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-600 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -270,17 +270,17 @@ function App() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white/95 backdrop-blur-xl rounded-3xl p-10 mb-6 shadow-2xl"
+          className="bg-gray-900/60 backdrop-blur-xl rounded-3xl p-10 mb-6 shadow-2xl border border-gray-800"
         >
           <motion.h1
-            className="text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3"
+            className="text-5xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
             {name}
           </motion.h1>
-          <p className="text-2xl text-gray-500 mb-6">{title}</p>
+          <p className="text-2xl text-gray-400 mb-6">{title}</p>
           <div className="flex flex-wrap gap-3">
             {contact.map((c, idx) => (
               <ContactItem key={idx} icon={c.icon} text={c.text} />
@@ -291,7 +291,7 @@ function App() {
         {/* Summary */}
         <Section>
           <SectionTitle>Professional Summary</SectionTitle>
-          <p className="text-gray-600 text-lg leading-relaxed">{summary}</p>
+          <p className="text-gray-300 text-lg leading-relaxed">{summary}</p>
         </Section>
 
         {/* Experience */}
@@ -341,9 +341,9 @@ function App() {
               viewport={{ once: true }}
               className="mb-4"
             >
-              <h3 className="text-xl font-semibold text-gray-800">{edu.degree}</h3>
-              <p className="text-purple-600 font-medium">{edu.school}</p>
-              <p className="text-gray-400 text-sm">{edu.details}</p>
+              <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
+              <p className="text-cyan-400 font-medium">{edu.school}</p>
+              <p className="text-gray-500 text-sm">{edu.details}</p>
             </motion.div>
           ))}
         </Section>
@@ -362,9 +362,9 @@ function App() {
               <motion.li
                 key={idx}
                 variants={itemVariants}
-                className="flex items-center gap-3 text-gray-600"
+                className="flex items-center gap-3 text-gray-300"
               >
-                <Award className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                <Award className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                 {cert}
               </motion.li>
             ))}
