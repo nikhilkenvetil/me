@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nikhil Kenvetil - Résumé </title>
+    <style>
+        body, html, * {
+            /* Turns off ligatures (fixes the 'ff' and 'g' spacing bugs) */
+            font-variant-ligatures: none; 
+    
+            /* Forces standard text rendering for the raw PDF text layer */
+            text-rendering: auto; 
+            -webkit-font-smoothing: antialiased;
+            
+            /* CRITICAL: Use a basic system font. Custom web fonts cause CMap mapping errors */
+            font-family: Arial, Helvetica, sans-serif !important;
+        }
+
+        body {
+            font-family: 'Calibri', 'Arial', 'sans-serif';
+            line-height: 1.4;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2E74B5;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .name {
+            font-size: 35px;
+            font-weight: bold;
+            color: #2E74B5;
+            margin-bottom: 5px;
+            font-family: 'Tahoma';
+        }
+        
+        .contact-info {
+            font-size: 11pt;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2E74B5;
+            border-bottom: 1px solid #2E74B5;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-family: 'Tahoma';
+        }
+        
+        .job-title {
+            font-weight: bold;
+            font-size: 14px;
+            color: #5c5c5c;
+        }
+        
+        .company {
+            font-weight: bold;
+            color: black;
+            font-size: larger;
+        }
+        
+        .date {
+            float: right;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .job-header {
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+        
+        ul {
+            margin-top: 8px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .skill-category {
+            margin-bottom: 10px;
+        }
+        
+        .skill-title {
+            font-weight: bold;
+            font-size: 12pt;
+            color: #2E74B5;
+            margin-bottom: 5px;
+        }
+        
+        .skill-items {
+            font-size: 11pt;
+            line-height: 1.6;
+        }
+        
+        .project-title {
+            font-weight: bold;
+            font-size: 18pt;
+            margin-top: 1px;
+            color: #444;
+        }
+        
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .cert-item {
+            margin-bottom: 8px;
+        }
+        
+        .clear {
+            clear: both;
+        }
+
+        /* Adds a subtle gray line after each job's responsibility list */
+        .job-header + ul {
+            position: relative;
+            margin-bottom: 40px; /* keep the extra spacing */
+        }
+
+        .job-header + ul::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: #ddd;
+            margin-top: 20px;
+        }
+
+        .project-title + ul {
+            position: relative;
+            margin-bottom: 40px; /* keep the extra spacing */
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="name">NIKHIL KENVETIL</div>
+    <div class="contact-info">Bengaluru, Karnataka | +91 9742-693-500 | nikhil.kenvetil@live.com</div>
+    <a href="https://www.linkedin.com/in/nikhilkenvetil/"> <div class="contact-info">LinkedIn </div> </a>
+</div>
+
+<div class="section-title">PROFESSIONAL SUMMARY</div>
+<p><b>Senior Software Engineer</b> and <b>Cloud Services Manager</b> with <b>over 15 years of experience</b> specializing in <b>Azure</b>, <b>Azure DevOps</b>, <b>CI/CD automation</b>, <b>AWS</b>, and <b>AI/ML technologies</b>.
+    <b>Proven expertise</b> in <b>designing</b> and <b>optimizing scalable DevOps pipelines</b>, <b>leading cross-functional teams</b>, and <b>implementing enterprise-grade security</b> and <b>compliance frameworks</b>.
+    <b>Strong background</b> in <b>Microsoft Azure</b>, <b>AWS</b>, <b>build/release engineering</b>, and <b>full lifecycle application management</b>.</p>
+
+<div class="section-title">WORK EXPERIENCE</div>
+
+<div class="job-header">
+    <span class="job-title">Senior Software Engineer / Cloud Services Manager</span><br>
+    <span class="company"><a href="https://www.bounteous.com/">Bounteous X Accolite</a></span>
+    <span class="date">February 2021 – Present</span>
+</div>
+<ul>
+    <li>Part of the <strong>One Identity/Quest project</strong>, continuing responsibilities from previous organization, including managing the <strong>Support documentation for ISO 27001 certification</strong>.</li>
+    <li><strong>Led and mentored a cross-functional team</strong> in adopting and mastering legacy tooling and core technologies, facilitating <strong>knowledge transfer and operational consistency</strong> during organizational transition.</li>
+    <li><strong>Designed, implemented, and iteratively optimized CI/CD build and release pipelines</strong> to improve reliability, traceability, and deployment velocity across multiple product lines.</li>
+    <li><strong>Spearheaded the end-to-end migration of Bitbucket repositories</strong>—including Git LFS-managed assets—to <strong>Azure DevOps</strong>, ensuring minimal disruption and full fidelity of version control history.</li>
+    <li><strong>Orchestrated the migration of Jira backlog items and workflows to Azure Boards</strong>, aligning Agile planning and tracking processes with the enterprise DevOps platform.</li>
+    <li>Provided <strong>expert-level troubleshooting and resolution for complex build and release failures</strong>, reducing pipeline downtime and accelerating time-to-resolution.</li>
+    <li>Led a collaborative engineering effort to <strong>automate client-facing database regression testing</strong>—architected and executed entirely using Azure DevOps Pipelines—resulting in improved test coverage, repeatability, and release confidence.</li>
+    <li><strong>Integrated and operationalized enterprise-grade Static and Dynamic Application Security Testing (SAST/DAST)</strong> into the SDLC for multiple products:
+        <ul>
+            <li><strong>SAST</strong>: Polaris Software Integrity Platform, Mend (formerly WhiteSource)</li>
+            <li><strong>DAST</strong>: Acunetix</li>
+        </ul>
+    </li>
+    <li><strong>Re-engineered the team’s branching strategy</strong> to streamline release cadence, eliminating redundant merge layers and enabling faster, safer deployments to production.</li>
+    <li>Guided and co-developed the <strong>conversion of legacy Classic Azure DevOps pipelines to modern, maintainable YAML-based pipelines</strong>—enhancing reusability, version control, and auditability.</li>
+    <li>Executed <strong>coordinated upgrades of production infrastructure</strong>, including simultaneous OS (Ubuntu) and database (MongoDB) version upgrades.</li>
+    <li><strong>Designed and implemented robust, scheduled backup and recovery mechanisms for mission-critical MongoDB production databases</strong> to ensure data integrity and business continuity.</li>
+    <li><strong>Leveraged CloudZero to monitor real-time AWS spend</strong>, identifying cost anomalies and wasteful resources across both Production and QA accounts.</li>
+    <li><strong>Implemented data lifecycle management strategies</strong>, moving appropriate assets to <strong>S3 Intelligent-Tiering</strong> and archiving legacy data to <strong>S3 Glacier</strong>, significantly lowering monthly storage bills.</li>
+    <li><strong>Decommissioned obsolete Kubernetes monitoring stacks</strong> and removed associated PVCs to <strong>reclaim EBS storage capacity and reduce EC2 compute usage</strong> in non-critical environments.</li>
+    <li><strong>Architected</strong> a <strong>fault-tolerant</strong>, <strong>distributed</strong> data deletion pipeline on <strong>AWS EMR Serverless</strong> to scrub targeted tenant data across a <strong>3 billion-file S3 data lake</strong>, generating <strong>automated compliance audits</strong> in <strong>GCP</strong>.</li>
+    <ul>
+        <li><strong>Designed a hybrid PySpark and Boto3 architecture</strong> to bypass single-node memory limits, <strong>parsing 10 GB+ manifest files</strong> and <strong>efficiently orchestrating 300+ parallel tasks</strong> across <strong>100 EMR worker nodes</strong>.</li>
+        <li><strong>Optimized AWS compute and S3 API costs</strong> by programmatically <strong>filtering initial discovery manifests</strong>, narrowing the <strong>computing scope from a 9-billion-file data lake down to 3 billion</strong> actionable objects.</li>
+        <li><strong>Engineered a custom Python worker function</strong> to <strong>dynamically detect S3 file formats</strong> (<i>Parquet</i>, <i>ORC</i>, <i>JSON</i>, <i>CSV</i>, <i>GZIP</i>) via <strong>magic bytes</strong> (aka a <strong>file's digital fingerprint</strong>), scrubbing <strong>structured and unstructured data</strong> on the fly using <strong>Pandas and dynamic regex</strong>.</li>
+        <li><strong>Enforced strict compliance requirements</strong> by executing <strong>localized, in-place S3 file overwrites</strong>, <strong>preserving exact data lake schemas</strong> while <strong>automatically aggregating and uploading audit evidence</strong> to <strong>Google Cloud Storage</strong>.
+</li>
+    </ul>
+    
+
+</ul>
+
+<div class="job-header">
+    <span class="job-title">DevOps Lead / Senior Engineer</span><br>
+    <span class="company"><a href="https://www.oneidentity.com/">One Identity by Quest</a></span>
+    <span class="date">June 2019 – January 2021</span>
+</div>
+<ul>
+    <li><strong>Led a team of DevOps Engineers and Escalation team members.</strong></li>
+    <li>Supported <strong>Identity and Access Management products</strong> by working with the support engineers and was the <strong>escalation point of contact.</strong></li>
+    <li><strong>Responded to customer queries and advocating on problem resolution.</strong></li>
+    <li><strong>Investigated root causes</strong> of the application behaviours reported by customers.</li>
+    <li>Participated in tasks involving <strong>new product functions and creating knowledgebase.</strong></li>
+    <li><strong>Implemented and enhanced automated release process</strong> by which the Azure offering software flowed from the developers to the customers.</li>
+    <li><strong>Defined the next generation CI/CD process and supported test automation framework</strong> in the Microsoft cloud as part of the build engineering team.</li>
+    <li><strong>Worked relentlessly in refining and improving the process</strong> as the Azure business grew.</li>
+    <li>Worked in an <strong>Agile environment</strong> with a world-wide team of Azure experts to achieve best standards.</li>
+    <li><strong>Managed full life-cycle experience</strong> (design through delivery and support), developing, and improving software configuration management standards, practices, and procedures.</li>
+    <li>Administered software engineering <strong>source control management and build tools (e.g., Git)</strong> to include developing strategies for code branching and release creation.</li>
+    <li>Experience with <strong>Azure DevOps (formerly <i>Visual Studio Team Server (VSTS))</i> workflows and pipelines.</strong></li>
+    <li><strong>Authored and maintained authoritative Confluence documentation</strong> for operational procedures, architectural diagrams, incident playbooks, and compliance artifacts—ensuring transparency and knowledge continuity.</li>
+    <li><strong>Guided and supervised monthly and quarterly drills</strong>, part of which was the (aforementioned) secret rotation. This also included:
+        <ul>
+            <li>Database Restoration drill (Azure SQL)</li>
+            <li>Data Breach Response drill</li>
+            <li>Resource Failure drill (predominantly Azure Functions)</li>
+        </ul>
+    </li>
+    <li><strong>Owned SLA compliance for critical support queues</strong>—monitoring ticket aging, driving resolution prioritization, and reporting KPIs to leadership to ensure service excellence.</li>
+    <li><strong>Mentored team members on Application Lifecycle Management (ALM) best practices</strong>, emphasizing how Azure DevOps enables traceability, collaboration, and governed delivery across planning, coding, building, testing, and releasing.</li>
+    <li><strong>Participated in a rotating 24×7 on-call roster</strong>, providing rapid response to production incidents and ensuring high system availability for enterprise customers.</li>
+</ul>
+
+<div class="job-header">
+    <span class="job-title">Senior Engineer</span><br>
+    <span class="company"><a href="https://services.harman.com/">Harman Connected Services (a Samsung company)</a></span>
+    <span class="date">November 2017 – June 2019</span>
+</div>
+<ul>
+    <li>To <strong>provide support to customers implementing Microsoft Azure DevOps</strong> (formerly VSTS).</li>
+    <li><strong>Addressing customers with their Account related questions</strong> around their DevOps organization.</li>
+    <li>Assisting customers <strong>connect their DevOps organization to their Azure Active Directory</strong> and to also <strong>link their Azure subscription</strong> with it for billing purposes.</li>
+    <li><strong>Assisting the customers who are trying to build/release their project</strong> to an Azure environment or of their own.</li>
+    <li><strong>Configuring private/self-hosted agents</strong> in case the customers have their own build server.</li>
+    <li><strong>Configuring Deployment Groups</strong> in case the customers have their own deployment server.</li>
+    <li><strong>Working with the Product Group</strong> in case you’re unable to solve an issue yourself.</li>
+</ul>
+
+<div class="job-header">
+    <span class="job-title">Solution Architect</span><br>
+    <span class="company"><a href="https://www.linkedin.com/company/mmadapps/about/">MMAD Apps</a></span>
+    <span class="date">January 2017 – April 2017</span>
+</div>
+<ul>
+    <li><b>Advised</b> <b>local businesses</b> and <b>banks</b> on <b>cloud adoption strategies</b> and <b>Azure migration</b></li>
+    <li><b>Conducted presales activities</b> and <b>Proof-of-Concept (PoC)</b> setups for <b>Azure implementations</b></li>
+</ul>
+
+<div class="job-header">
+    <span class="job-title">Support Engineer</span><br>
+    <span class="company"><a href="https://spectrumconsultants.com/">Microsoft (through SPECTRUM CONSULTANTS INDIA PVT. LTD)</a></span>
+    <span class="date">May 2013 – June 2016</span>
+</div>
+<ul>
+    <li><b>Provided global Azure support</b>, handling <b>billing</b>, <b>quota increases requests</b>, and <b>access management</b></li>
+    <li><b>Collaborated</b> with <b>TAMs</b> and <b>LARs</b> to <b>resolve enterprise</b> and <b>partner issues</b></li>
+    <li><b>Developed internal training tools</b> and <b>flowcharts</b> for <b>onboarding new hires</b></li>
+</ul>
+
+<div class="section-title">KEY PROJECTS</div>
+
+<div class="project-title">AI-Enabled Boxing Trainer</div>
+Developed a real-time pose estimation system using Python, MediaPipe, and OpenCV. Provided corrective feedback on boxing form through computer vision tracking of multiple body parts.
+<ul>
+    <li><b>Developed</b> an <b>AI-Enabled Boxing Trainer</b> using <b>Python</b>, leveraging the <b>Mediapipe</b> and <b>CV2 libraries</b>.</li>
+    <li><b>Designed</b> to <b>enhance individual boxing sessions</b> by <b>analyzing real-time body movements</b> and <b>offering feedback on form</b>.</li>
+    <li>Utilized <b>computer vision techniques</b> to <b>accurately track multiple body parts</b>, enabling <b>precise feedback</b> for <b>optimal workout experiences</b>.</li>
+    <li>Implemented features for <b>suggesting corrective actions</b>, <b>contributing to users'</b> overall <b>improvement in boxing skills.</b></li>
+</ul>
+
+
+<div class="project-title">Real-Time Cab Data Analytics Pipeline</div>
+Built an end-to-end data engineering pipeline using Azure, Spark, PostgreSQL, and Grafana. Automated data ingestion, sanitization, and visualization via Apache Airflow and Docker.</p>
+<ul>
+    <li> <b>Data Ingestion</b>: Data required for this workflow was being ingested from an <b>Azure Storage</b>, specifically created for this use case. The specific storage account was populated with the required data in a timely manner - 100 records every 2 minutes - to <b>simulate</b> a <b>real-time scenario</b> on an <b>off-peak hour</b>. This was accomplished by using <b>REST API calls</b> to <b>GET</b> data from <b>BigQuery dataset</b>, and the <b>response</b> was <b>written</b> into a <b>JSON file</b> and <b>saved into the Azure Storage blob</b> account. </li>
+    <li><b>Data Sanitization</b>: The data received was <b>sanitized</b> by employing a <b>Spark cluster</b>, where <b>any rows</b> with <b>NAs</b> was simply <b>dropped</b>. Since this was just a prototype, this was permitted.</li>
+    <li><b>Data Storage</b>: The <b>sanitized data</b> was then <b>pushed into a PostgreSQL database</b>.</li>
+    <li><b>Data Analysis</b> and <b>Visualization</b>: The <b>data</b> was then <b>analysed</b> and <b>visualized</b> using <b>Grafana</b>.</li>
+    <li>This whole setup was <b>orchestrated</b> using <b>Apache Airflow</b>. <b>Every component in this project was Dockerized</b>.</li>
+</ul>
+
+
+<div class="project-title">Automatic Question Generation from PDF Books</div>
+Fine-tuned Mistral-7B LLM to generate context-aware questions from uploaded PDFs. Developed a user-friendly web interface for PDF processing and question extraction.
+<ul>
+    <li><b>Implemented</b> an <b>efficient system</b> for <b>scanning PDF books</b> to <b>automatically generate questions</b> from it. </li>
+    <li>Built upon an <b>existing model</b>, <a href="https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ">TheBloke/Mistral-7B-Instruct-v0.1-GPTQ</a>, to create a <b>fine-tuned Language Model (LLM)</b> for the <b>generation of relevant questions</b> from a <b>given context</b>.</li>
+    <li><b>Developed</b> an <b>intuitive</b> and <b>user-friendly web interface</b> designed for ease of use. This interface <b>enabled users</b> to <b>effortlessly upload PDF books</b>, <b>initiating the scanning</b> and <b>question generation processes</b>.</li>
+    <li><b>Leverage</b> the <b>fine-tuned LLM</b> to <b>generate coherent</b> and <b>contextually relevant questions</b> based on the <b>content</b> extracted from the PDF books. The <b>model</b> was capable of <b>understanding</b> and <b>interpreting</b> the material to formulate questions that promote deeper comprehension.</li>
+</ul>
+
+
+<div class="project-title">Image Inpainting with Deep Learning</div>
+Trained a CNN model on CIFAR-10 dataset using Google Colab for image reconstruction and inpainting tasks.
+<ul>
+    <li><b>Computer Vision system</b> for <b>image inpainting</b> using <b>Deep Learning techniques</b>, employing the <b>CIFAR-10 dataset</b> with <b>approximately 50,000 images</b>.</li>
+    <li>Utilized <b>Google Colab's GPU resources</b> to <b>enhance computational power</b> for <b>training deep neural networks</b>, <b>accelerating</b> the <b>model development process</b>.</li>
+    <li><b>Image inpainting</b>, <b>filling missing</b> or <b>corrupted parts with plausible content</b>, was approached through <b>convolutional neural networks (CNNs)</b> trained on the CIFAR-10 dataset.</li>
+    <li>The <b>CIFAR-10 dataset</b>, <b>encompassing 10 object classes</b>, served as a <b>robust benchmark</b>, enabling the model to <b>learn diverse visual features</b> and <b>generalize well in various inpainting scenarios</b>.</li>
+    <li><b>Demonstrated the effectiveness of Deep Learning algorithms</b> in <b>accurately inpainting missing regions</b>, resulting in <b>visually appealing outcomes</b>.</li>
+    <li>Positioned the project as a <b>testament to the collaborative power of advanced deep learning techniques</b>, <b>rich datasets</b>, and <b>GPU acceleration</b> in pushing the boundaries of <b>image inpainting</b> capabilities.</li>
+</ul>
+
+<div class="section-title">TECHNICAL SKILLS</div>
+<div class="skills-grid">
+    <div class="skill-category">
+        <div class="skill-title">Cloud & DevOps</div>
+        <div class="skill-items"><b>Microsoft Azure</b>, <b>AWS</b>, <b>Azure DevOps</b>, <b>CI/CD Pipelines</b>, <b>ARM Templates</b>, <b>Docker</b>, <b>Git</b></div>
+    </div>
+    <div class="skill-category">
+        <div class="skill-title">Security & Monitoring</div>
+        <div class="skill-items"><b>Azure Key Vault</b>, <b>Application Insights</b>, <b>SAST/DAST</b>, <b>Polaris</b>, <b>Mend</b>, <b>Acunetix</b></div>
+    </div>
+    <div class="skill-category">
+        <div class="skill-title">Programming & Scripting</div>
+        <div class="skill-items"><b>Python</b>, <b>PowerShell</b>, <b>YAML</b>, <b>Bash</b>, <b>Rust</b></div>
+    </div>
+    <div class="skill-category">
+        <div class="skill-title">AI/ML & Data Science</div>
+        <div class="skill-items"><b>Machine Learning</b>, <b>Deep Learning</b>, <b>LLMs</b>, <b>Computer Vision</b>, <b>Neural Networks</b></div>
+    </div>
+    <div class="skill-category">
+        <div class="skill-title">Databases & Tools</div>
+        <div class="skill-items"><b>MongoDB</b>, <b>Azure SQL</b>, <b>PostgreSQL</b>, <b>Grafana</b>, <b>Apache Airflow</b>, <b>Spark</b>, <b>AWS Glue</b>, <b>AWS Athena</b>, <b>AWS EMR Serverless</b> </div>
+    </div>
+    <div class="skill-category">
+        <div class="skill-title">Methodologies</div>
+        <div class="skill-items"><b>Agile/Scrum</b>, <b>ITIL</b>, <b>Application Lifecycle Management</b>, <b>ISO 27001</b></div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<div class="section-title">EDUCATION</div>
+<div class="education-item">
+    <strong>Master of Computer Applications (Artificial Intelligence Specialization)</strong><br>
+    Amrita Vishwa Vidyapeetham | November 2021 – November 2023
+</div>
+<div class="education-item">
+    <strong>PG Diploma in Data Science</strong><br>
+    Manipal Academy of Higher Education (MAHE) | August 2017 – October 2018
+</div>
+<div class="education-item">
+    <strong>Bachelor of Computer Applications</strong><br>
+    Sikkim Manipal University (SMU) | October 2012 – January 2016
+</div>
+
+<div class="section-title">CERTIFICATIONS</div>
+<ul>
+    <li><div class="cert-item"><b>AZ-104: Microsoft Azure Administrator</b> (from <i>Microsoft</i>, November 2021)</div></li>
+    <li><div class="cert-item"><b>MTA: Introduction to Programming Using Python</b> (from <i>Microsoft</i>, January 2021)</div></li>
+    <li><div class="cert-item"><b>Machine Learning Pipelines with Azure ML Studio</b> (from <i>Coursera</i>, September 2020)</div></li>
+    <li><div class="cert-item"><b>Neural Networks and Deep Learning</b> (from <i>Coursera</i>, May 2019)</div></li>
+    <li><div class="cert-item"><b>Machine Learning A-Z™: Hands-On Python & R in Data Science</b> (from <i>Udemy</i>, April 2017)</div></li>
+    <li><div class="cert-item"><b>ITIL V3 Foundations</b> (from <i>APMG International</i>, March 2013)</div></li>
+</ul>
+
+<div class="section-title">EARLIER EXPERIENCE</div>
+<ul>
+    <li><strong>Service Desk Analyst</strong> - <a href="https://www.accenture.com/in-en">Accenture Services Private Limited</a> (January 2011 – December 2012)</li>
+    <li><strong>Associate Technical Support</strong> - <a href="https://www.dell.com/support/contents/en-in/category/contact-information/international-support-services"> Dell International Services </a> (March 2010 – December 2010)</li>
+    <li><strong>Associate Technical Support</strong> - Aditya Birla Minacs (now <a href="https://www.concentrix.com/">Concentrix</a>) (July 2007 – March 2010)</li>
+</ul>
+
+</body>
+</html>
