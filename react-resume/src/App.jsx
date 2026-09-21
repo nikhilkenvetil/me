@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Code, Database, Server, Globe, Award, BookOpen } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink, Code, Database, Server, Globe, Award, BookOpen, Moon, Sun, Download } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const resumeData = {
   name: "Nikhil Kenvetil",
@@ -185,16 +186,96 @@ const cardVariants = {
 };
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('theme', newMode ? 'dark' : 'light');
+  };
+
+  const handleDownloadPDF = () => {
+    window.print();
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-gray-100">
+    <div className={`min-h-screen transition-colors duration-500 ${
+      darkMode 
+        ? 'bg-gradient-to-br from-gray-950 via-black to-gray-900 text-gray-100' 
+        : 'bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900'
+    }`}>
       {/* Header Section */}
       <motion.header 
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative overflow-hidden bg-gradient-to-r from-cyan-900/40 via-purple-900/40 to-cyan-900/40 backdrop-blur-sm border-b border-cyan-500/20"
+        className={`relative overflow-hidden backdrop-blur-sm border-b ${
+          darkMode 
+            ? 'bg-gradient-to-r from-cyan-900/30 via-purple-900/30 to-cyan-900/30 border-cyan-500/20' 
+            : 'bg-gradient-to-r from-cyan-50 via-purple-50 to-cyan-50 border-cyan-200'
+        }`}
       >
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
+        
+        {/* Theme Toggle & Download Buttons */}
+        <div className="absolute top-4 right-4 z-50 flex gap-3">
+          <motion.button
+            onClick={toggleTheme}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={`p-3 rounded-full backdrop-blur-sm border transition-all duration-300 ${
+              darkMode 
+                ? 'bg-gray-800/60 border-cyan-500/30 text-cyan-400 hover:border-cyan-400/60 hover:bg-cyan-900/30' 
+                : 'bg-white/60 border-gray-300 text-gray-700 hover:border-cyan-500 hover:bg-cyan-50'
+            }`}
+            title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          >
+            <AnimatePresence mode="wait">
+              {darkMode ? (
+                <motion.div
+                  key="sun"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Sun size={20} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="moon"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Moon size={20} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
+          
+          <motion.button
+            onClick={handleDownloadPDF}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={`p-3 rounded-full backdrop-blur-sm border transition-all duration-300 ${
+              darkMode 
+                ? 'bg-gray-800/60 border-purple-500/30 text-purple-400 hover:border-purple-400/60 hover:bg-purple-900/30' 
+                : 'bg-white/60 border-gray-300 text-gray-700 hover:border-purple-500 hover:bg-purple-50'
+            }`}
+            title="Download PDF"
+          >
+            <Download size={20} />
+          </motion.button>
+        </div>
         
         <div className="max-w-6xl mx-auto px-6 py-16 relative z-10">
           <motion.div
